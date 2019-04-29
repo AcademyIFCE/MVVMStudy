@@ -9,35 +9,49 @@
 import UIKit
 
 class CharacterTableViewCell: UITableViewCell {
+    var characterViewModel: CharacterViewModel! {
+        didSet{
+            imageCharacter.image = UIImage(named: "JonMock")
+            nameCharacter.text = characterViewModel.name
+            cultureCharacter.text = characterViewModel.culture
+        }
+    }
     lazy var imageCharacter: UIImageView = {
        let image = UIImageView()
         image.translatesAutoresizingMaskIntoConstraints = false
-        image.widthAnchor.constraint(equalToConstant: 40).isActive = true
-        image.heightAnchor.constraint(equalToConstant: 40).isActive = true
-        image.layer.cornerRadius = 20
+        image.widthAnchor.constraint(equalToConstant: 75).isActive = true
+        image.heightAnchor.constraint(equalToConstant: 75).isActive = true
         image.clipsToBounds = true
         return image
     }()
     lazy var nameCharacter: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
+        label.font = UIFont.boldSystemFont(ofSize: 24)
         return label
     }()
-    
+    lazy var cultureCharacter: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.font = UIFont.boldSystemFont(ofSize: 16)
+        return label
+    }()
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setComponentsInCell()
     }
-    
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
     fileprivate func setComponentsInCell() {
         addSubview(imageCharacter)
         addSubview(nameCharacter)
-        imageCharacter.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 10).isActive = true
-        nameCharacter.leadingAnchor.constraint(equalToSystemSpacingAfter: imageCharacter.leadingAnchor, multiplier: 7).isActive = true
+        addSubview(cultureCharacter)
+        nameCharacter.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
+        nameCharacter.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 10).isActive = true
+        cultureCharacter.topAnchor.constraint(equalTo: nameCharacter.bottomAnchor, constant: 2).isActive = true
+        cultureCharacter.leadingAnchor.constraint(equalTo: nameCharacter.leadingAnchor, constant: 7).isActive = true
+        imageCharacter.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -5).isActive = true
+        imageCharacter.topAnchor.constraint(lessThanOrEqualToSystemSpacingBelow: self.topAnchor, multiplier: 2).isActive = true
     }
-    
 }

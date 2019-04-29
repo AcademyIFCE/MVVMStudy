@@ -16,6 +16,7 @@
 		922DE2362274BC5300020AA5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 922DE2352274BC5300020AA5 /* Assets.xcassets */; };
 		922DE2382274C04700020AA5 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922DE2372274C04700020AA5 /* Service.swift */; };
 		922DE23B2274D86700020AA5 /* Characters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922DE23A2274D86700020AA5 /* Characters.swift */; };
+		9297CC262275CB4B00F69496 /* CharacterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9297CC252275CB4B00F69496 /* CharacterViewModel.swift */; };
 		DA72941A22739C2B00D74669 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA72941922739C2B00D74669 /* AppDelegate.swift */; };
 		DA72941C22739C2B00D74669 /* CharacterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA72941B22739C2B00D74669 /* CharacterViewController.swift */; };
 		DA72942422739C2D00D74669 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA72942222739C2D00D74669 /* LaunchScreen.storyboard */; };
@@ -42,6 +43,7 @@
 		922DE2352274BC5300020AA5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = "../../../Downloads/MVVMStudy-master/MVVMStudy/Assets.xcassets"; sourceTree = "<group>"; };
 		922DE2372274C04700020AA5 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		922DE23A2274D86700020AA5 /* Characters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Characters.swift; sourceTree = "<group>"; };
+		9297CC252275CB4B00F69496 /* CharacterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterViewModel.swift; sourceTree = "<group>"; };
 		DA72941622739C2B00D74669 /* MVVMStudy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MVVMStudy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA72941922739C2B00D74669 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DA72941B22739C2B00D74669 /* CharacterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterViewController.swift; sourceTree = "<group>"; };
@@ -73,6 +75,7 @@
 		922DE21B2274976300020AA5 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				9297CC252275CB4B00F69496 /* CharacterViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -86,7 +89,7 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		922DE21D2274977000020AA5 /* Controller */ = {
+		922DE21D2274977000020AA5 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
 				DA72941B22739C2B00D74669 /* CharacterViewController.swift */,
@@ -94,7 +97,7 @@
 				922DE21F227497A000020AA5 /* CustomTabBarController.swift */,
 				922DE2282274A46900020AA5 /* BaseCollectionViewController.swift */,
 			);
-			path = Controller;
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 		922DE21E2274977F00020AA5 /* Model */ = {
@@ -121,6 +124,15 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		9297CC272275DB4100F69496 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				DA72941922739C2B00D74669 /* AppDelegate.swift */,
+				DA72942222739C2D00D74669 /* LaunchScreen.storyboard */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
 		DA72940D22739C2B00D74669 = {
 			isa = PBXGroup;
 			children = (
@@ -142,16 +154,15 @@
 		DA72941822739C2B00D74669 /* MVVMStudy */ = {
 			isa = PBXGroup;
 			children = (
+				DA72942522739C2D00D74669 /* Info.plist */,
 				922DE2352274BC5300020AA5 /* Assets.xcassets */,
+				922DE21E2274977F00020AA5 /* Model */,
+				922DE21B2274976300020AA5 /* ViewModel */,
+				922DE21D2274977000020AA5 /* ViewController */,
+				922DE21C2274976C00020AA5 /* View */,
 				922DE22C2274B6E700020AA5 /* Extensions */,
 				922DE22322749A0800020AA5 /* Service */,
-				922DE21E2274977F00020AA5 /* Model */,
-				922DE21D2274977000020AA5 /* Controller */,
-				922DE21C2274976C00020AA5 /* View */,
-				922DE21B2274976300020AA5 /* ViewModel */,
-				DA72941922739C2B00D74669 /* AppDelegate.swift */,
-				DA72942222739C2D00D74669 /* LaunchScreen.storyboard */,
-				DA72942522739C2D00D74669 /* Info.plist */,
+				9297CC272275DB4100F69496 /* Settings */,
 			);
 			path = MVVMStudy;
 			sourceTree = "<group>";
@@ -175,6 +186,7 @@
 				DA72941222739C2B00D74669 /* Sources */,
 				DA72941322739C2B00D74669 /* Frameworks */,
 				DA72941422739C2B00D74669 /* Resources */,
+				925469CB22767BD1008848EF /* SwiftLint */,
 			);
 			buildRules = (
 			);
@@ -260,6 +272,27 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		925469CB22767BD1008848EF /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 12;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		DA72941222739C2B00D74669 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -271,6 +304,7 @@
 				DA72941A22739C2B00D74669 /* AppDelegate.swift in Sources */,
 				922DE22522749ED200020AA5 /* CharacterTableViewCell.swift in Sources */,
 				922DE2382274C04700020AA5 /* Service.swift in Sources */,
+				9297CC262275CB4B00F69496 /* CharacterViewModel.swift in Sources */,
 				922DE2292274A46900020AA5 /* BaseCollectionViewController.swift in Sources */,
 				922DE220227497A000020AA5 /* CustomTabBarController.swift in Sources */,
 				922DE2222274995400020AA5 /* HousesViewController.swift in Sources */,

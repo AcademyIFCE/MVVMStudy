@@ -8,27 +8,27 @@
 
 import Foundation
 
-
 class Service {
     static let shared = Service()
-    func fetchCharacthers(completion: @escaping ([Characters], Error?) -> () ) {
-        let urlString: String = "https://rickandmortyapi.com/api/character/2"
-        guard let url = URL(string: urlString) else {return}
-        let urlSession = URLSession.shared
-        urlSession.dataTask(with: url) { (data, res, err) in
-            guard let data = data else {return}
-            if let error = err {
-                print("Rejected API Result",error)
-                completion([], error)
-                return
-            }
-            do {
-                 let result = try JSONDecoder().decode(Characters.self, from: data)
-                completion([result], nil)
-            } catch let error {
-                print("Rejected API Result",error)
-                completion([], error)
-            }
-        }.resume()
+    static let baseUrl = "https://www.anapioficeandfire.com/api/"
+    func fetchCharacthers(searchTerm: String,completion: @escaping ([Characters], Error?) -> () ) {
+            let urlString: String = "https://anapioficeandfire.com/api/characters/\(searchTerm)"
+            guard let url = URL(string: urlString) else {return}
+            let urlSession = URLSession.shared
+            urlSession.dataTask(with: url) { (data, _, err) in
+                guard let data = data else {return}
+                if let error = err {
+                    print("Rejected API Result",error)
+                    completion([], error)
+                    return
+                }
+                do {
+                    let result = try JSONDecoder().decode(Characters.self, from: data)
+                    completion([result], nil)
+                } catch let error {
+                    print("Rejected API Result",error)
+                    completion([], error)
+                }
+                }.resume()
     }
 }

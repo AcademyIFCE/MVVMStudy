@@ -6,12 +6,19 @@
 //  Copyright © 2019 academy.IFCE. All rights reserved.
 //
 
-import Foundation
-
-
-class Characters: Decodable {
-    let name: String
-    let status: String
-    let species: String
-    let gender: String
+import UIKit
+struct Characters: Decodable {
+    var name: String?
+    var gender: String?
+    var culture: String?
+    var birthDate: String?
+    var allegiances: [String]?
+    var house: String?
+    var titles: [String]?
+    var aliases: [String]?
+    var mother: String?
+    var father: String?
+    var spouse: String?
+    var playedBy: [String]?
+    var imageUrl: URL?
 }
