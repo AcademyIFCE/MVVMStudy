@@ -29,8 +29,6 @@ extension RickAndMortyAPI  {
             return "/character/\(ids)"
         case .episode:
             return "/episode"
-        default:
-            return ""
         }
     }
 }

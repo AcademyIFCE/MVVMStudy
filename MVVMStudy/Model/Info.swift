@@ -24,7 +24,7 @@ struct Info: Decodable {
             if let nextPageInt = Int(nextPage()) {
                 return "\(nextPageInt - 1)"
             }
-        }
+    }
         else if previousPage() != "" {
             if let previousPageInt = Int(previousPage()) {
                 return "\(previousPageInt + 1)"

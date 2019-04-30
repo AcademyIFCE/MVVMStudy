@@ -7,6 +7,7 @@ disabled_rules:
  - comma
  - colon
  - void_return
-
+ - identifier_name
+ - statement_position
 
 

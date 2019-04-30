@@ -11,7 +11,6 @@ import UIKit
 class CharacterTableViewCell: UITableViewCell {
     var charactersViewModel: Character! {
         didSet{
-            imageCharacter.image = UIImage(named: "JonMock")
             nameCharacter.text = charactersViewModel.name
             cultureCharacter.text = charactersViewModel.gender
         }
@@ -27,13 +26,13 @@ class CharacterTableViewCell: UITableViewCell {
     lazy var nameCharacter: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont.boldSystemFont(ofSize: 24)
+        label.font = UIFont(name: "Get Schwifty", size: 24)
         return label
     }()
     lazy var cultureCharacter: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont.boldSystemFont(ofSize: 16)
+        label.font = UIFont(name: "Get Schwifty", size: 16)
         return label
     }()
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {

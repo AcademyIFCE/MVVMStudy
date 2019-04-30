@@ -21,10 +21,10 @@ class Service: APIRickAndMortyDelegate {
             }
             guard let data = data else {return}
             do {
-                let results = try? JSONDecoder().decode(CharacterResponse.self, from: data)
-                completion(results?.results, results?.info)
+                let results = try JSONDecoder().decode(CharacterResponse.self, from: data)
+                completion(results.results, results.info)
             } catch let error {
-                print("Fatal error in transformable", error)
+                print("Fatal error", error)
             }
         }
     }

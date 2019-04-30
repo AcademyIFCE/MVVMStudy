@@ -14,6 +14,7 @@ class CharacterViewController: UITableViewController, UISearchBarDelegate {
     var charactersViewModel = [Character]()
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = #colorLiteral(red: 0.1843137255, green: 0.2117647059, blue: 0.2509803922, alpha: 1)
         tableView.register(CharacterTableViewCell.self, forCellReuseIdentifier: cellId)
         setupSearchBar()
         fetchCharacters()
@@ -24,11 +25,11 @@ class CharacterViewController: UITableViewController, UISearchBarDelegate {
     navigationItem.hidesSearchBarWhenScrolling = false
     searchController.dimsBackgroundDuringPresentation = false
     searchController.searchBar.delegate = self
+    searchController.searchBar.barStyle = .blackOpaque
     }
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {}
-    
     fileprivate func fetchCharacters() {
-        Service.shared.getCharacter(name: "", page: "") { (res, info) in
+        Service.shared.getCharacter(name: "", page: "") { (res, _) in
             self.charactersViewModel = res!
             DispatchQueue.main.async {
                 self.tableView.reloadData()

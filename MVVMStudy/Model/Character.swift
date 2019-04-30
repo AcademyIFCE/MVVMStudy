@@ -11,12 +11,10 @@ struct CharacterResponse: Decodable {
     let info: Info
     let results: [Character]
 }
-
 struct CharacterLocation: Decodable {
     let name: String
     let url: String
 }
-
 struct Character: Decodable {
     let id: Int
     let name: String
@@ -29,4 +27,3 @@ struct Character: Decodable {
     let url: String
     let created: String
 }
-
