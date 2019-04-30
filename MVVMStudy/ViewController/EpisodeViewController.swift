@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HousesViewController: BaseCollectionViewController, UICollectionViewDelegateFlowLayout{
+class EpisodeViewController: BaseCollectionViewController, UICollectionViewDelegateFlowLayout{
 
     fileprivate let cellId: String = "HousesCellId"
     override func viewDidLoad() {

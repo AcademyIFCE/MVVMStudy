@@ -9,11 +9,11 @@
 import UIKit
 
 class CharacterTableViewCell: UITableViewCell {
-    var characterViewModel: CharacterViewModel! {
+    var charactersViewModel: Character! {
         didSet{
             imageCharacter.image = UIImage(named: "JonMock")
-            nameCharacter.text = characterViewModel.name
-            cultureCharacter.text = characterViewModel.culture
+            nameCharacter.text = charactersViewModel.name
+            cultureCharacter.text = charactersViewModel.gender
         }
     }
     lazy var imageCharacter: UIImageView = {

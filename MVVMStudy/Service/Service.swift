@@ -8,27 +8,24 @@
 
 import Foundation
 
-class Service {
+class Service: APIRickAndMortyDelegate {
     static let shared = Service()
-    static let baseUrl = "https://www.anapioficeandfire.com/api/"
-    func fetchCharacthers(searchTerm: String,completion: @escaping ([Characters], Error?) -> () ) {
-            let urlString: String = "https://anapioficeandfire.com/api/characters/\(searchTerm)"
-            guard let url = URL(string: urlString) else {return}
-            let urlSession = URLSession.shared
-            urlSession.dataTask(with: url) { (data, _, err) in
-                guard let data = data else {return}
-                if let error = err {
-                    print("Rejected API Result",error)
-                    completion([], error)
-                    return
-                }
-                do {
-                    let result = try JSONDecoder().decode(Characters.self, from: data)
-                    completion([result], nil)
-                } catch let error {
-                    print("Rejected API Result",error)
-                    completion([], error)
-                }
-                }.resume()
+    func getCharacter(name: String, page: String, completion: @escaping ([Character]?, Info?) -> Void) {
+        let urlString: String = "https://rickandmortyapi.com/api/character"
+        guard let url: URL = URL(string: urlString) else {return}
+        let urlSession: URLSession = URLSession.shared
+        urlSession.dataTask(with: url) { (data, _, err) in
+            if let error = err {
+                print("Fatal Error",error)
+                return
+            }
+            guard let data = data else {return}
+            do {
+                let results = try? JSONDecoder().decode(CharacterResponse.self, from: data)
+                completion(results?.results, results?.info)
+            } catch let error {
+                print("Fatal error in transformable", error)
+            }
+        }
     }
 }

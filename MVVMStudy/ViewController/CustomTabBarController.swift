@@ -16,13 +16,15 @@ class CustomTabBarController: UITabBarController {
     fileprivate func setComponents() {
         viewControllers = [
                             createNavigation(viewController: CharacterViewController() , title: "Characters", imageName: "Character"),
-                            createNavigation(viewController: HousesViewController(), title: "Houses", imageName: "House")
+                            createNavigation(viewController: EpisodeViewController(), title: "Episode", imageName: "Episode")
                           ]
     }
     fileprivate func createNavigation(viewController: UIViewController, title: String, imageName: String) -> UINavigationController {
         let navigation:UINavigationController = UINavigationController(rootViewController: viewController)
         viewController.navigationItem.title = title
         viewController.view.backgroundColor = .white
+        viewController.view.backgroundColor = #colorLiteral(red: 0.1843137255, green: 0.2117647059, blue: 0.2509803922, alpha: 1)
+        navigation.tabBarController?.tabBar.backgroundColor = .black
         navigation.tabBarItem.title = title
         navigation.tabBarItem.image = UIImage(named: imageName)
         navigation.navigationBar.prefersLargeTitles = true

@@ -11,13 +11,12 @@ import UIKit
 class CharacterViewController: UITableViewController, UISearchBarDelegate {
     fileprivate let cellId = "characterCellId"
     fileprivate let searchController = UISearchController(searchResultsController: nil)
-    var charactersViewModel = [CharacterViewModel]()
+    var charactersViewModel = [Character]()
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.register(CharacterTableViewCell.self, forCellReuseIdentifier: cellId)
-        tabBarController?.tabBar.tintColor = .yellow
         setupSearchBar()
-        fetchCharacters(searchText: "583")
+        fetchCharacters()
     }
     fileprivate func setupSearchBar() {
     definesPresentationContext = true
@@ -26,16 +25,11 @@ class CharacterViewController: UITableViewController, UISearchBarDelegate {
     searchController.dimsBackgroundDuringPresentation = false
     searchController.searchBar.delegate = self
     }
-    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        fetchCharacters(searchText: searchText)
-    }
-    fileprivate func fetchCharacters(searchText: String) {
-        Service.shared.fetchCharacthers(searchTerm: searchText) { (character, err) in
-            if let error = err {
-                print("Fatal Error", error)
-                return
-            }
-            self.charactersViewModel = character.map({CharacterViewModel(character: $0)})
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {}
+    
+    fileprivate func fetchCharacters() {
+        Service.shared.getCharacter(name: "", page: "") { (res, info) in
+            self.charactersViewModel = res!
             DispatchQueue.main.async {
                 self.tableView.reloadData()
             }
@@ -56,7 +50,7 @@ class CharacterViewController: UITableViewController, UISearchBarDelegate {
     }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as? CharacterTableViewCell
-        cell?.characterViewModel = charactersViewModel[indexPath.row]
+        cell?.charactersViewModel = charactersViewModel[indexPath.row]
         return cell ?? UITableViewCell()
     }
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

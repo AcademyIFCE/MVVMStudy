@@ -10,18 +10,18 @@ import UIKit
 
 class HousesCollectionViewCell: UICollectionViewCell {
     lazy var imageHouse: UIImageView = {
-       let image = UIImageView(image: UIImage(named: "HouseMock"))
+       let image = UIImageView(image: UIImage(named: "launch"))
         return image
     }()
     lazy var nameHouse: UILabel = {
         let label = UILabel()
-        label.text = "STARK"
+        label.text = "Prelude"
         label.font = UIFont.boldSystemFont(ofSize: 20)
         return label
     }()
     lazy var descriptionHouse: UILabel = {
         let label = UILabel()
-        label.text = "Winter is Coming"
+        label.text = "This is the best EPISODE"
         label.font = UIFont.boldSystemFont(ofSize: 28)
         return label
     }()

@@ -7,18 +7,26 @@
 //
 
 import UIKit
-struct Characters: Decodable {
-    var name: String?
-    var gender: String?
-    var culture: String?
-    var birthDate: String?
-    var allegiances: [String]?
-    var house: String?
-    var titles: [String]?
-    var aliases: [String]?
-    var mother: String?
-    var father: String?
-    var spouse: String?
-    var playedBy: [String]?
-    var imageUrl: URL?
+struct CharacterResponse: Decodable {
+    let info: Info
+    let results: [Character]
 }
+
+struct CharacterLocation: Decodable {
+    let name: String
+    let url: String
+}
+
+struct Character: Decodable {
+    let id: Int
+    let name: String
+    let status: String
+    let species: String
+    let type: String
+    let gender: String
+    let image: String
+    let episode: [String]
+    let url: String
+    let created: String
+}
+
