@@ -6,15 +6,18 @@
 //  Copyright © 2019 academy.IFCE. All rights reserved.
 //
 
-import UIKit
+import Foundation
+
 struct CharacterResponse: Decodable {
     let info: Info
     let results: [Character]
 }
+
 struct CharacterLocation: Decodable {
     let name: String
     let url: String
 }
+
 struct Character: Decodable {
     let id: Int
     let name: String

@@ -9,12 +9,14 @@
 import UIKit
 
 class CharacterTableViewCell: UITableViewCell {
+    
     var charactersViewModel: CharacterViewModel! {
         didSet{
             nameCharacter.text = charactersViewModel.name
             cultureCharacter.text = charactersViewModel.gender
         }
     }
+    
     lazy var imageCharacter: UIImageView = {
        let image = UIImageView()
         image.translatesAutoresizingMaskIntoConstraints = false
@@ -23,25 +25,30 @@ class CharacterTableViewCell: UITableViewCell {
         image.clipsToBounds = true
         return image
     }()
+    
     lazy var nameCharacter: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont(name: "Get Schwifty", size: 24)
         return label
     }()
+    
     lazy var cultureCharacter: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont(name: "Get Schwifty", size: 16)
         return label
     }()
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setComponentsInCell()
     }
+    
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
     fileprivate func setComponentsInCell() {
         addSubview(imageCharacter)
         addSubview(nameCharacter)
