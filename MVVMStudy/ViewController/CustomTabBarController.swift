@@ -25,7 +25,7 @@ class CustomTabBarController: UITabBarController {
         let navigation:UINavigationController = UINavigationController(rootViewController: viewController)
         viewController.navigationItem.title = title
         navigation.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: #colorLiteral(red: 0.00539229624, green: 0.6875012517, blue: 0.792283237, alpha: 1), NSAttributedString.Key.font: UIFont(name: "Get Schwifty", size: 40)!]
-        navigation.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: #colorLiteral(red: 0.00539229624, green: 0.6875012517, blue: 0.792283237, alpha: 1), NSAttributedString.Key.font: UIFont(name: "Get Schwifty", size: 21)!]
+        navigation.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: #colorLiteral(red: 0.00539229624, green: 0.6875012517, blue: 0.792283237, alpha: 1), NSAttributedString.Key.font: UIFont(name: "Get Schwifty", size: 28)!]
         navigation.navigationBar.barTintColor = #colorLiteral(red: 0.1843137255, green: 0.2117647059, blue: 0.2509803922, alpha: 1)
         navigation.tabBarController?.tabBar.backgroundColor = .black
         navigation.tabBarItem.title = title

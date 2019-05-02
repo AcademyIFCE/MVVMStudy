@@ -1,0 +1,28 @@
+line_length: 
+ - 500 # warning
+ - 800 # error
+
+disabled_rules:
+ - force_cast
+ - identifier_name
+ - opening_brace
+ - trailing_whitespace
+ - void_return
+ - vertical_whitespace
+ - private_over_fileprivate
+excluded:
+ - Mini Challenge IIITests
+ - Mini Challenge IIIUITests
+line_length:
+ - 300 # warning
+ - 400 # error
+
+disabled_rules: 
+ - opening_brace
+ - comma
+ - colon
+ - void_return
+ - identifier_name
+ - statement_position
+
+

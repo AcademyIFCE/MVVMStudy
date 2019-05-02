@@ -9,7 +9,7 @@
 import UIKit
 
 class CharacterTableViewCell: UITableViewCell {
-    var charactersViewModel: Character! {
+    var charactersViewModel: CharacterViewModel! {
         didSet{
             nameCharacter.text = charactersViewModel.name
             cultureCharacter.text = charactersViewModel.gender

@@ -11,7 +11,7 @@ import UIKit
 class CharacterViewController: UITableViewController, UISearchBarDelegate {
     fileprivate let cellId = "characterCellId"
     fileprivate let searchController = UISearchController(searchResultsController: nil)
-    var charactersViewModel = [Character]()
+    var charactersViewModel = [CharacterViewModel]()
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = #colorLiteral(red: 0.1843137255, green: 0.2117647059, blue: 0.2509803922, alpha: 1)
@@ -29,12 +29,11 @@ class CharacterViewController: UITableViewController, UISearchBarDelegate {
     }
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {}
     fileprivate func fetchCharacters() {
-        Service.shared.getCharacter(name: "", page: "") { (res, _) in
-            self.charactersViewModel = res!
-            DispatchQueue.main.async {
-                self.tableView.reloadData()
-            }
-        }
+//        Service.shared.getCharacter(name: "", page: "") { (characterViewModel, _) in
+//            DispatchQueue.main.async {
+//                self.tableView.reloadData()
+//            }
+//        }
     }
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let cell = tableView.cellForRow(at: indexPath) as? CharacterTableViewCell
