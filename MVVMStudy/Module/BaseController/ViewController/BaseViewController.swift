@@ -30,6 +30,7 @@ class BaseViewController: UIViewController {
         
         var projects = [Project]()
         projects.append( Project(name: "Vinícius", destination: CustomTabBarController.self) )
+        projects.append( Project(name: "Davi", destination: FeedViewController.self) )
         
         cellViewModels = projects.map { BaseCellViewModel(controller: self, project: $0) }
         

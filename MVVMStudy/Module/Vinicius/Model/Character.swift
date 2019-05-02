@@ -8,9 +8,9 @@
 
 import Foundation
 
-struct CharacterResponse: Decodable {
-    let info: Info
-    let results: [Character]
+struct CharacterResponse: Decodable, APIResponse {
+    var info: Info
+    var results: [Character]
 }
 
 struct CharacterLocation: Decodable {

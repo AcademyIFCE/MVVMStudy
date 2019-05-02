@@ -11,6 +11,10 @@
 		53F8C27A227B646100753CDF /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F8C279227B646100753CDF /* BaseViewController.swift */; };
 		53F8C27D227B65C900753CDF /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F8C27C227B65C900753CDF /* Project.swift */; };
 		53F8C280227B698D00753CDF /* BaseCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F8C27F227B698D00753CDF /* BaseCellViewModel.swift */; };
+		53F8C284227B786700753CDF /* APIRoutes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F8C283227B786700753CDF /* APIRoutes.swift */; };
+		53F8C286227B813900753CDF /* APIProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F8C285227B813900753CDF /* APIProvider.swift */; };
+		53F8C288227B82F200753CDF /* APIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F8C287227B82F200753CDF /* APIResponse.swift */; };
+		53F8C28C227B880700753CDF /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F8C28B227B880700753CDF /* FeedViewController.swift */; };
 		922DE220227497A000020AA5 /* CustomTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922DE21F227497A000020AA5 /* CustomTabBarController.swift */; };
 		922DE2222274995400020AA5 /* EpisodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922DE2212274995400020AA5 /* EpisodeViewController.swift */; };
 		922DE22522749ED200020AA5 /* CharacterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922DE22422749ED200020AA5 /* CharacterTableViewCell.swift */; };
@@ -47,6 +51,10 @@
 		53F8C279227B646100753CDF /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		53F8C27C227B65C900753CDF /* Project.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Project.swift; sourceTree = "<group>"; };
 		53F8C27F227B698D00753CDF /* BaseCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCellViewModel.swift; sourceTree = "<group>"; };
+		53F8C283227B786700753CDF /* APIRoutes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRoutes.swift; sourceTree = "<group>"; };
+		53F8C285227B813900753CDF /* APIProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIProvider.swift; sourceTree = "<group>"; };
+		53F8C287227B82F200753CDF /* APIResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIResponse.swift; sourceTree = "<group>"; };
+		53F8C28B227B880700753CDF /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		922DE21F227497A000020AA5 /* CustomTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarController.swift; sourceTree = "<group>"; };
 		922DE2212274995400020AA5 /* EpisodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeViewController.swift; sourceTree = "<group>"; };
 		922DE22422749ED200020AA5 /* CharacterTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterTableViewCell.swift; sourceTree = "<group>"; };
@@ -118,6 +126,7 @@
 			children = (
 				53F8C276227B63A500753CDF /* BaseController */,
 				53F8C273227B637F00753CDF /* Vinicius */,
+				53F8C289227B855B00753CDF /* Davi */,
 			);
 			path = Module;
 			sourceTree = "<group>";
@@ -144,6 +153,32 @@
 				53F8C27F227B698D00753CDF /* BaseCellViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		53F8C282227B785000753CDF /* API */ = {
+			isa = PBXGroup;
+			children = (
+				53F8C283227B786700753CDF /* APIRoutes.swift */,
+				53F8C285227B813900753CDF /* APIProvider.swift */,
+				53F8C287227B82F200753CDF /* APIResponse.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		53F8C289227B855B00753CDF /* Davi */ = {
+			isa = PBXGroup;
+			children = (
+				53F8C28A227B874200753CDF /* ViewControllers */,
+			);
+			path = Davi;
+			sourceTree = "<group>";
+		};
+		53F8C28A227B874200753CDF /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				53F8C28B227B880700753CDF /* FeedViewController.swift */,
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 		922DE21B2274976300020AA5 /* ViewModel */ = {
@@ -242,6 +277,7 @@
 		DA72941822739C2B00D74669 /* MVVMStudy */ = {
 			isa = PBXGroup;
 			children = (
+				53F8C282227B785000753CDF /* API */,
 				53F8C277227B63B200753CDF /* Module */,
 				DA72942522739C2D00D74669 /* Info.plist */,
 				53F8C274227B639E00753CDF /* Assets.xcassets */,
@@ -382,10 +418,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				53F8C28C227B880700753CDF /* FeedViewController.swift in Sources */,
 				922DE22E2274B70500020AA5 /* UIView+Layout.swift in Sources */,
 				DA72941C22739C2B00D74669 /* CharacterViewController.swift in Sources */,
+				53F8C286227B813900753CDF /* APIProvider.swift in Sources */,
 				92682B332277EAE0006263D2 /* RickAndMortyAPIClient.swift in Sources */,
 				922DE22B2274A6C500020AA5 /* EpisodeCollectionViewCell.swift in Sources */,
+				53F8C288227B82F200753CDF /* APIResponse.swift in Sources */,
 				DA72941A22739C2B00D74669 /* AppDelegate.swift in Sources */,
 				922DE22522749ED200020AA5 /* CharacterTableViewCell.swift in Sources */,
 				92682B3E2277FFCC006263D2 /* EpisodeViewModel.swift in Sources */,
@@ -399,6 +438,7 @@
 				922DE2222274995400020AA5 /* EpisodeViewController.swift in Sources */,
 				922DE23B2274D86700020AA5 /* Character.swift in Sources */,
 				92682B392277EFE9006263D2 /* Episode.swift in Sources */,
+				53F8C284227B786700753CDF /* APIRoutes.swift in Sources */,
 				92682B372277EF91006263D2 /* Info.swift in Sources */,
 				53F8C27D227B65C900753CDF /* Project.swift in Sources */,
 			);
