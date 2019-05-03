@@ -39,7 +39,6 @@ enum APIRoutes {
 
         return formatUrl(endpoint: baseEndpoint, parameters: params)!.absoluteString
     }
-
     private func formatUrl(endpoint: String, parameters: Parameters?) -> URL? {
         var urlComponent = URLComponents(string: endpoint)
         urlComponent?.queryItems = parameters?.map({ (key,value) -> URLQueryItem in
