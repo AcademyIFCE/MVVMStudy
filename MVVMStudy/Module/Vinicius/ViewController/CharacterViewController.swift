@@ -16,9 +16,9 @@ class CharacterViewController: UITableViewController, UISearchBarDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = #colorLiteral(red: 0.1843137255, green: 0.2117647059, blue: 0.2509803922, alpha: 1)
-        tableView.backgroundColor = #colorLiteral(red: 0.1843137255, green: 0.2117647059, blue: 0.2509803922, alpha: 1)
-        tableView.register(CharacterTableViewCell.self, forCellReuseIdentifier: cellId)
+        self.view.backgroundColor = #colorLiteral(red: 0.1843137255, green: 0.2117647059, blue: 0.2509803922, alpha: 1)
+        self.tableView.backgroundColor = #colorLiteral(red: 0.1843137255, green: 0.2117647059, blue: 0.2509803922, alpha: 1)
+        self.tableView.register(CharacterTableViewCell.self, forCellReuseIdentifier: cellId)
         setupSearchBar()
         fetchCharacters()
     }
@@ -52,13 +52,13 @@ class CharacterViewController: UITableViewController, UISearchBarDelegate {
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let cell = tableView.cellForRow(at: indexPath) as? CharacterTableViewCell
+        let detailView = DetailCharacterViewController()
+        UIView.animate(withDuration: 0.7, delay: 0, options: .curveEaseOut, animations: {
+             let navDetail = UINavigationController(rootViewController: detailView)
+             self.present(navDetail, animated: true, completion: nil)
+            detailView.character = self.characters[indexPath.row]
+        }, completion: (nil))
         cell?.characters = self.characters[indexPath.row]
-        let colorCell = UIColor(red: 255, green: 0, blue: 0, alpha: 0.3)
-        if cell?.backgroundColor == colorCell {
-            cell?.backgroundColor = #colorLiteral(red: 0.1843137255, green: 0.2117647059, blue: 0.2509803922, alpha: 1)
-        } else {
-            cell?.backgroundColor = colorCell
-        }
         tableView.reloadData()
     }
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -70,7 +70,6 @@ class CharacterViewController: UITableViewController, UISearchBarDelegate {
         cell?.characters = self.characters[indexPath.row]
         return cell ?? UITableViewCell()
     }
-
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 100
     }

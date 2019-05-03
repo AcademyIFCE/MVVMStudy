@@ -31,6 +31,7 @@
 		92682B3C2277FEDA006263D2 /* Get Schwifty.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 92682B3B2277FE1F006263D2 /* Get Schwifty.ttf */; };
 		92682B3E2277FFCC006263D2 /* EpisodeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92682B3D2277FFCC006263D2 /* EpisodeViewModel.swift */; };
 		9297CC262275CB4B00F69496 /* CharacterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9297CC252275CB4B00F69496 /* CharacterViewModel.swift */; };
+		92D8DF71227D048D0005F684 /* DetailCharacterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D8DF70227D048D0005F684 /* DetailCharacterViewController.swift */; };
 		A7355970E983802173A7713F /* Pods_MVVMStudyTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB39C5C06335519D35740B66 /* Pods_MVVMStudyTests.framework */; };
 		DA72941A22739C2B00D74669 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA72941922739C2B00D74669 /* AppDelegate.swift */; };
 		DA72941C22739C2B00D74669 /* CharacterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA72941B22739C2B00D74669 /* CharacterViewController.swift */; };
@@ -75,6 +76,7 @@
 		92682B3B2277FE1F006263D2 /* Get Schwifty.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Get Schwifty.ttf"; sourceTree = "<group>"; };
 		92682B3D2277FFCC006263D2 /* EpisodeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeViewModel.swift; sourceTree = "<group>"; };
 		9297CC252275CB4B00F69496 /* CharacterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterViewModel.swift; sourceTree = "<group>"; };
+		92D8DF70227D048D0005F684 /* DetailCharacterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCharacterViewController.swift; sourceTree = "<group>"; };
 		C16B2396C1F210438C514AB8 /* Pods-MVVMStudy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MVVMStudy.release.xcconfig"; path = "Target Support Files/Pods-MVVMStudy/Pods-MVVMStudy.release.xcconfig"; sourceTree = "<group>"; };
 		C9A6FD85290B1AED6C3A5C78 /* Pods-MVVMStudyTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MVVMStudyTests.release.xcconfig"; path = "Target Support Files/Pods-MVVMStudyTests/Pods-MVVMStudyTests.release.xcconfig"; sourceTree = "<group>"; };
 		DA72941622739C2B00D74669 /* MVVMStudy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MVVMStudy.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -222,6 +224,7 @@
 			isa = PBXGroup;
 			children = (
 				DA72941B22739C2B00D74669 /* CharacterViewController.swift */,
+				92D8DF70227D048D0005F684 /* DetailCharacterViewController.swift */,
 				922DE2212274995400020AA5 /* EpisodeViewController.swift */,
 				922DE21F227497A000020AA5 /* CustomTabBarController.swift */,
 				922DE2282274A46900020AA5 /* BaseCollectionViewController.swift */,
@@ -283,7 +286,6 @@
 				31FEDC9B99126A3017738ACE /* Pods-MVVMStudyTests.debug.xcconfig */,
 				C9A6FD85290B1AED6C3A5C78 /* Pods-MVVMStudyTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -525,6 +527,7 @@
 				DA72941C22739C2B00D74669 /* CharacterViewController.swift in Sources */,
 				53F8C286227B813900753CDF /* APIProvider.swift in Sources */,
 				92682B332277EAE0006263D2 /* RickAndMortyAPIClient.swift in Sources */,
+				92D8DF71227D048D0005F684 /* DetailCharacterViewController.swift in Sources */,
 				922DE22B2274A6C500020AA5 /* EpisodeCollectionViewCell.swift in Sources */,
 				53F8C288227B82F200753CDF /* APIResponse.swift in Sources */,
 				DA72941A22739C2B00D74669 /* AppDelegate.swift in Sources */,
