@@ -22,7 +22,6 @@ class CustomTabBarController: UITabBarController {
                             createNavigation(viewController: EpisodeViewController(), title: "Episode", imageName: "Episode")
                           ]
     }
-
     fileprivate func createNavigation(viewController: UIViewController, title: String, imageName: String) -> UINavigationController {
         let navigation:UINavigationController = UINavigationController(rootViewController: viewController)
         viewController.navigationItem.title = title

@@ -9,6 +9,14 @@
 import UIKit
 
 class EpisodeCollectionViewCell: UICollectionViewCell {
+
+    var episode: Episode! {
+        didSet {
+            nameHouse.text = episode.name
+            descriptionHouse.text = episode.episode
+        }
+    }
+
     lazy var imageHouse: UIImageView = {
        let image = UIImageView(image: UIImage(named: "launch"))
         image.contentMode = .scaleAspectFill

@@ -17,6 +17,7 @@ class CharacterViewController: UITableViewController, UISearchBarDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = #colorLiteral(red: 0.1843137255, green: 0.2117647059, blue: 0.2509803922, alpha: 1)
+        tableView.backgroundColor = #colorLiteral(red: 0.1843137255, green: 0.2117647059, blue: 0.2509803922, alpha: 1)
         tableView.register(CharacterTableViewCell.self, forCellReuseIdentifier: cellId)
         setupSearchBar()
         fetchCharacters()
@@ -43,22 +44,23 @@ class CharacterViewController: UITableViewController, UISearchBarDelegate {
             guard let results = response?.results else {return}
             self.characters = results
             response?.results.forEach { print($0.image) }
-            self.tableView.reloadData()
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
         }
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let cell = tableView.cellForRow(at: indexPath) as? CharacterTableViewCell
         cell?.characters = self.characters[indexPath.row]
-        let colorCell = UIColor(red: 255, green: 0, blue: 0, alpha: 0.5)
+        let colorCell = UIColor(red: 255, green: 0, blue: 0, alpha: 0.3)
         if cell?.backgroundColor == colorCell {
-            cell?.backgroundColor = .white
+            cell?.backgroundColor = #colorLiteral(red: 0.1843137255, green: 0.2117647059, blue: 0.2509803922, alpha: 1)
         } else {
             cell?.backgroundColor = colorCell
         }
         tableView.reloadData()
     }
-
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.characters.count
     }
@@ -72,4 +74,11 @@ class CharacterViewController: UITableViewController, UISearchBarDelegate {
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 100
     }
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+    }
+
+    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+
 }

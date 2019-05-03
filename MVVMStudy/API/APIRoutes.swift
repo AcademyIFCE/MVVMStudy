@@ -9,7 +9,6 @@
 import Foundation
 
 enum APIRoutes {
-
     typealias Parameters = [APIParametersKeys: String]
 
     case character(Parameters?)
@@ -60,7 +59,6 @@ enum APIStatusValues: String, CustomStringConvertible {
     case alive
     case dead
     case unknown
-
     var description: String {
         return rawValue
     }

@@ -21,6 +21,7 @@ class CharacterTableViewCell: UITableViewCell {
         didSet{
             nameCharacter.text = characters.name
             imageCharacter.sd_setImage(with: URL(string: characters.image))
+            cultureCharacter.text = characters.gender
         }
     }
 
@@ -30,12 +31,14 @@ class CharacterTableViewCell: UITableViewCell {
         image.widthAnchor.constraint(equalToConstant: 75).isActive = true
         image.heightAnchor.constraint(equalToConstant: 75).isActive = true
         image.clipsToBounds = true
+        image.layer.cornerRadius = 8
         return image
     }()
 
     lazy var nameCharacter: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
+        label.textColor = #colorLiteral(red: 0, green: 0.8592078792, blue: 1, alpha: 1)
         label.font = UIFont(name: "Get Schwifty", size: 24)
         return label
     }()
@@ -44,11 +47,13 @@ class CharacterTableViewCell: UITableViewCell {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont(name: "Get Schwifty", size: 16)
+        label.textColor = #colorLiteral(red: 0, green: 0.8592078792, blue: 1, alpha: 1)
         return label
     }()
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
+        self.backgroundColor = #colorLiteral(red: 0.1843137255, green: 0.2117647059, blue: 0.2509803922, alpha: 1)
         setComponentsInCell()
     }
 
