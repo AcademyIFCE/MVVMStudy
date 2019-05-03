@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class CharacterTableViewCell: UITableViewCell {
 
@@ -19,6 +20,7 @@ class CharacterTableViewCell: UITableViewCell {
     var characters: Character! {
         didSet{
             nameCharacter.text = characters.name
+            imageCharacter.sd_setImage(with: URL(string: characters.image))
         }
     }
 

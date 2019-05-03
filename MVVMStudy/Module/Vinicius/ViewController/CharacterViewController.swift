@@ -42,7 +42,7 @@ class CharacterViewController: UITableViewController, UISearchBarDelegate {
             }
             guard let results = response?.results else {return}
             self.characters = results
-            response?.results.forEach { print($0.name) }
+            response?.results.forEach { print($0.image) }
             self.tableView.reloadData()
         }
     }
