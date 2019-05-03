@@ -19,21 +19,21 @@ class BaseViewController: UIViewController {
         view.addSubview(table)
         return table
     }()
-    
+
     private var cellViewModels: [BaseCellViewModel] = [] {
         didSet { tableView.reloadData() }
     }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
-        
+
         var projects = [Project]()
         projects.append( Project(name: "Vinícius", destination: CustomTabBarController.self) )
         projects.append( Project(name: "Davi", destination: FeedViewController.self) )
-        
+
         cellViewModels = projects.map { BaseCellViewModel(controller: self, project: $0) }
-        
+
         let safeArea = view.safeAreaLayoutGuide
         NSLayoutConstraint.activate([
             tableView.topAnchor.constraint(equalTo: safeArea.topAnchor),
@@ -48,14 +48,14 @@ extension BaseViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return cellViewModels.count
     }
-    
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         let viewModel = cellViewModels[indexPath.row]
         cell.textLabel?.text = viewModel.title
         return cell
     }
-    
+
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let viewModel = cellViewModels[indexPath.row]
         viewModel.cellWasPressed()

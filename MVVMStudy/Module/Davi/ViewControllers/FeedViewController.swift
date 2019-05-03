@@ -13,9 +13,9 @@ class FeedViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
-        
+
         let provider = APIProvider<CharacterResponse>()
-        provider.data(from: .character(nil)) { (response, error) in
+        provider.data(from: .character(nil)) { (response, _) in
             response?.results.forEach { print($0.name) }
         }
     }

@@ -13,15 +13,15 @@ struct Info: Decodable {
     let pages: Int
     let next: String
     let prev: String
-    
+
     func nextPage() -> String {
         return trimPageURL(next)
     }
-    
+
     func previousPage() -> String {
         return trimPageURL(prev)
     }
-    
+
     func currentPage() -> String {
         if nextPage() != "" {
             if let nextPageInt = Int(nextPage()) {
@@ -35,7 +35,7 @@ struct Info: Decodable {
         }
         return "1"
     }
-    
+
     private func trimPageURL(_ urlString: String) -> String {
         if let index = urlString.range(of: "=")?.upperBound {
             let pageSubString = (urlString[index...])
