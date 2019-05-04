@@ -19,15 +19,17 @@ class CustomTabBarController: UITabBarController {
     fileprivate func setComponents() {
         viewControllers = [
                             createNavigation(viewController: CharacterViewController() , title: "Characters", imageName: "Character"),
-                            createNavigation(viewController: EpisodeViewController(), title: "Episode", imageName: "Episode")
+                            createNavigation(viewController: EpisodeViewController(), title: "Episode", imageName: "Episode"),
+                            createNavigation(viewController: UIViewController(), title: "Favorites", imageName: "Favorite")
                           ]
     }
     fileprivate func createNavigation(viewController: UIViewController, title: String, imageName: String) -> UINavigationController {
         let navigation:UINavigationController = UINavigationController(rootViewController: viewController)
         viewController.navigationItem.title = title
+        viewController.view.backgroundColor = #colorLiteral(red: 0.1843137255, green: 0.2117647059, blue: 0.2509803922, alpha: 1)
         let backBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(dismissController))
         setTitleColor(navigation)
-        viewController.navigationItem.leftBarButtonItem = backBarButtonItem
+        viewController.navigationItem.rightBarButtonItem = backBarButtonItem
         navigation.navigationBar.barTintColor = #colorLiteral(red: 0.1843137255, green: 0.2117647059, blue: 0.2509803922, alpha: 1)
         navigation.tabBarController?.tabBar.backgroundColor = .black
         navigation.tabBarItem.title = title
@@ -40,7 +42,7 @@ class CustomTabBarController: UITabBarController {
         navigation.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: #colorLiteral(red: 0.00539229624, green: 0.6875012517, blue: 0.792283237, alpha: 1), NSAttributedString.Key.font: UIFont(name: "Get Schwifty", size: 28)!]
     }
 
-    @objc private func dismissController() {
+    @objc fileprivate func dismissController() {
         dismiss(animated: true, completion: nil)
     }
 }

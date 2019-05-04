@@ -14,6 +14,13 @@ class CharacterViewController: UITableViewController, UISearchBarDelegate {
     var charactersViewModel = [CharacterViewModel]()
     var characters = [Character]()
 
+    lazy var activity: UIActivityIndicatorView = {
+        let act = UIActivityIndicatorView(style: .whiteLarge)
+        act.translatesAutoresizingMaskIntoConstraints = false
+        act.startAnimating()
+        return act
+    }()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = #colorLiteral(red: 0.1843137255, green: 0.2117647059, blue: 0.2509803922, alpha: 1)
@@ -21,6 +28,7 @@ class CharacterViewController: UITableViewController, UISearchBarDelegate {
         self.tableView.register(CharacterTableViewCell.self, forCellReuseIdentifier: cellId)
         setupSearchBar()
         fetchCharacters()
+        setupIndicator()
     }
 
     fileprivate func setupSearchBar() {
@@ -43,13 +51,15 @@ class CharacterViewController: UITableViewController, UISearchBarDelegate {
             }
             guard let results = response?.results else {return}
             self.characters = results
-            response?.results.forEach { print($0.image) }
             DispatchQueue.main.async {
                 self.tableView.reloadData()
             }
         }
     }
-
+    fileprivate func setupIndicator() {
+        view.addSubview(activity)
+        activity.centerInSuperview()
+    }
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let cell = tableView.cellForRow(at: indexPath) as? CharacterTableViewCell
         let detailView = DetailCharacterViewController()
@@ -62,6 +72,12 @@ class CharacterViewController: UITableViewController, UISearchBarDelegate {
         tableView.reloadData()
     }
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if characters.count == 0{
+            self.tableView.separatorStyle = .none
+        } else {
+            self.tableView.separatorStyle = .singleLine
+            activity.stopAnimating()
+        }
         return self.characters.count
     }
 

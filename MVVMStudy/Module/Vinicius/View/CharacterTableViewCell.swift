@@ -21,7 +21,7 @@ class CharacterTableViewCell: UITableViewCell {
         didSet{
             nameCharacter.text = characters.name
             imageCharacter.sd_setImage(with: URL(string: characters.image))
-            cultureCharacter.text = characters.gender
+            cultureCharacter.text = characters.status
         }
     }
 

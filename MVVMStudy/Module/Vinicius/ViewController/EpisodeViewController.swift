@@ -12,12 +12,23 @@ class EpisodeViewController: BaseCollectionViewController, UICollectionViewDeleg
 
     var episodes =  [Episode]()
 
+    lazy var activity: UIActivityIndicatorView = {
+       let act = UIActivityIndicatorView(style: .whiteLarge)
+        act.translatesAutoresizingMaskIntoConstraints = false
+        act.startAnimating()
+        return act
+    }()
     fileprivate let cellId: String = "HousesCellId"
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.register(EpisodeCollectionViewCell.self, forCellWithReuseIdentifier: cellId)
         collectionView.backgroundColor = #colorLiteral(red: 0.1843137255, green: 0.2117647059, blue: 0.2509803922, alpha: 1)
+        setupActivity()
         fetchEpisodes()
+    }
+    fileprivate func setupActivity() {
+        view.addSubview(activity)
+        activity.centerInSuperview()
     }
     fileprivate func fetchEpisodes() {
         let provider = APIProvider<EpisodeResponse>()
@@ -27,13 +38,13 @@ class EpisodeViewController: BaseCollectionViewController, UICollectionViewDeleg
             }
             guard let episodes = episodes?.results else {return}
             self.episodes = episodes
-            print(episodes)
             DispatchQueue.main.async {
                 self.collectionView.reloadData()
             }
         }
     }
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        if episodes.count != 0 {activity.stopAnimating()}
         return episodes.count
     }
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
