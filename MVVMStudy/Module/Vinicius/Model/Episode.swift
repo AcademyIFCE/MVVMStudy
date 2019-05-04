@@ -18,7 +18,6 @@ struct Episode: Decodable {
     var name: String
     let airDate: String
     let episode: String
-
     let characters: [String]
     let url: String
     let created: String

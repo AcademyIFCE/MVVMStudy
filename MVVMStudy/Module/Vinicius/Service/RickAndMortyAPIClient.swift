@@ -7,11 +7,12 @@
 //
 
 import Foundation
-
+import CoreData
 enum RickAndMortyAPI {
     case character(name: String, page: String)
     case charactersWith(ids: String)
     case episode(name: String, page: String)
+    
 }
 
 extension RickAndMortyAPI  {

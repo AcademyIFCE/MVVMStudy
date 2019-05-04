@@ -29,4 +29,5 @@ struct Character: Decodable {
     let episode: [String]
     let url: String
     let created: String
+    var isFavorite: Bool?
 }

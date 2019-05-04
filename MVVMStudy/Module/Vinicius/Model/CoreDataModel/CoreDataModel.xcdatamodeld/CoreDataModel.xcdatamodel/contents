@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14490.99" systemVersion="18E226" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="CharacterCoreData" representedClassName="CharacterCoreData" syncable="YES" codeGenerationType="class">
+        <attribute name="image" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="species" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="status" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="EpisodeCoreData" representedClassName="EpisodeCoreData" syncable="YES" codeGenerationType="class"/>
+    <elements>
+        <element name="CharacterCoreData" positionX="-66.16796875" positionY="0" width="128" height="103"/>
+        <element name="EpisodeCoreData" positionX="105.12890625" positionY="0.0859375" width="128" height="43"/>
+    </elements>
+</model>

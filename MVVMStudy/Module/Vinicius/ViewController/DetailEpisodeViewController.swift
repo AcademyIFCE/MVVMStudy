@@ -32,6 +32,14 @@ class DetailEpisodeViewController: UIViewController {
         return label
     }()
     
+    lazy var buttonFavorite: UIButton = {
+        let button = UIButton(type: .custom)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setImage(UIImage(named: "heartNormal"), for: .normal)
+        button.addTarget(self, action: #selector(favoriteEpisode), for: .touchUpInside)
+        return button
+    }()
+    
     lazy var created: UILabel = {
         let label = UILabel()
         label.textColor = #colorLiteral(red: 0, green: 0.8592078792, blue: 1, alpha: 1)
@@ -54,9 +62,9 @@ class DetailEpisodeViewController: UIViewController {
     }
     
     fileprivate func setEpisodeDate() {
-        name.text = episode.name
-        airDate.text = episode.airDate
-        created.text = episode.created
+        name.text = "PILOT"
+        airDate.text = "SQ1EQ1"
+        created.text = "20/02/2015"
     }
     
     fileprivate func setConstraints() {
@@ -70,5 +78,8 @@ class DetailEpisodeViewController: UIViewController {
         airDate.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 15).isActive = true
         created.topAnchor.constraint(equalTo: airDate.bottomAnchor, constant: 15).isActive = true
         created.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 15).isActive = true
+    }
+    @objc fileprivate func favoriteEpisode() {
+        
     }
 }

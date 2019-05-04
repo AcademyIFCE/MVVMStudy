@@ -69,7 +69,10 @@ class EpisodeViewController: BaseCollectionViewController, UICollectionViewDeleg
         UIView.animate(withDuration: 0.7, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.7, options: .curveEaseOut, animations: {
             viewDetail?.frame = self.view.frame
         }, completion: (nil))
-        detailEpisodeVC.episode = self.episodes[indexPath.row]
+        detailEpisodeVC.name.text = episodes[indexPath.row].name
+        detailEpisodeVC.airDate.text = episodes[indexPath.row].airDate
+        detailEpisodeVC.created.text = episodes[indexPath.row].created
+      
     }
     @objc fileprivate func handleRemoveView(gesture: UITapGestureRecognizer) {
         UIView.animate(withDuration: 0.7, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.7, options: .curveEaseOut, animations: {

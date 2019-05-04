@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class DetailCharacterViewController: UIViewController {
     public var character: Character!
@@ -58,8 +59,8 @@ class DetailCharacterViewController: UIViewController {
         view.addSubview(name)
         view.addSubview(status)
         view.addSubview(species)
-        view.insertSubview(image, at: 2)
-        view.insertSubview(buttonFavorite, at: 1)
+        view.addSubview(image)
+        image.addSubview(buttonFavorite)
         setConstraints()
     }
 
@@ -93,9 +94,9 @@ class DetailCharacterViewController: UIViewController {
 
     @objc fileprivate func favoriteCharacter() {
         buttonFavorite.setImage(UIImage(named: "heartSelected"), for: .normal)
+        character.isFavorite = true
     }
     @objc fileprivate func backToController() {
         dismiss(animated: true, completion: nil)
     }
-
 }
