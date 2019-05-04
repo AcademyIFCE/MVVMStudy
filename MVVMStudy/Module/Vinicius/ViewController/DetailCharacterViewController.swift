@@ -9,9 +9,7 @@
 import UIKit
 
 class DetailCharacterViewController: UIViewController {
-
     public var character: Character!
-
     lazy var name: UILabel = {
         let label = UILabel()
         label.textColor = #colorLiteral(red: 0, green: 0.8592078792, blue: 1, alpha: 1)
@@ -94,7 +92,7 @@ class DetailCharacterViewController: UIViewController {
     }
 
     @objc fileprivate func favoriteCharacter() {
-        print("tap")
+        buttonFavorite.setImage(UIImage(named: "heartSelected"), for: .normal)
     }
     @objc fileprivate func backToController() {
         dismiss(animated: true, completion: nil)

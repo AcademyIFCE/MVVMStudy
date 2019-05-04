@@ -9,11 +9,11 @@
 import UIKit
 
 class EpisodeViewController: BaseCollectionViewController, UICollectionViewDelegateFlowLayout{
-
+    
     var episodes =  [Episode]()
-
+    
     lazy var activity: UIActivityIndicatorView = {
-       let act = UIActivityIndicatorView(style: .whiteLarge)
+        let act = UIActivityIndicatorView(style: .whiteLarge)
         act.translatesAutoresizingMaskIntoConstraints = false
         act.startAnimating()
         return act
@@ -54,5 +54,28 @@ class EpisodeViewController: BaseCollectionViewController, UICollectionViewDeleg
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return .init(width: view.frame.width - 48, height: 400)
+    }
+    var startingFrame: CGRect?
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let detailEpisodeVC = DetailEpisodeViewController()
+        let viewDetail =  detailEpisodeVC.view
+        viewDetail?.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleRemoveView)))
+        view.addSubview(viewDetail!)
+        guard let cell = collectionView.cellForItem(at: indexPath) else {return}
+        guard let startingFrame = cell.superview?.convert(cell.frame, to: nil) else {return}
+        self.startingFrame = startingFrame
+        viewDetail?.frame = startingFrame
+        view.layer.cornerRadius = 16
+        UIView.animate(withDuration: 0.7, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.7, options: .curveEaseOut, animations: {
+            viewDetail?.frame = self.view.frame
+        }, completion: (nil))
+        detailEpisodeVC.episode = self.episodes[indexPath.row]
+    }
+    @objc fileprivate func handleRemoveView(gesture: UITapGestureRecognizer) {
+        UIView.animate(withDuration: 0.7, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.7, options: .curveEaseOut, animations: {
+            gesture.view?.frame = self.startingFrame ?? .zero
+        }, completion: { _ in
+            gesture.view?.removeFromSuperview()
+        })
     }
 }

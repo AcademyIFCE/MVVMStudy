@@ -17,12 +17,10 @@ struct APIProvider<T: Decodable & APIResponse> {
         }
 
         URLSession.shared.dataTask(with: url) { (data, response, error) in
-
             guard let data = data else {
                 completion(nil, error)
                 return
             }
-
             do {
                 let jsonDecoder = JSONDecoder()
                 let response = try jsonDecoder.decode(T.self, from: data)

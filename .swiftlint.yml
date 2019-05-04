@@ -9,6 +9,6 @@ disabled_rules:
  - void_return
  - identifier_name
  - statement_position
-
+ - trailing_whitespace
 
 
