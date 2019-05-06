@@ -27,6 +27,10 @@ class FeedViewModel {
         return characters.count
     }
     
+    var title: String {
+        return "Personagens"
+    }
+    
     var cellIdentifier: String {
         return isShortPresented ? ShortRnMCollectionViewCell.cellIdentifier : LongRnMCollectionViewCell.cellIdentifier
     }

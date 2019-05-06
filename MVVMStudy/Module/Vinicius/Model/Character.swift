@@ -1,8 +1,8 @@
 //
-//  Characters.swift
+//  Character.swift
 //  MVVMStudy
 //
-//  Created by Vinicius Mangueira Correia on 27/04/19.
+//  Created by Vinicius Mangueira Correia on 02/05/19.
 //  Copyright © 2019 academy.IFCE. All rights reserved.
 //
 
@@ -20,7 +20,7 @@ struct CharacterLocation: Decodable {
 
 struct Character: Decodable {
     let id: Int
-    let name: String
+    var name: String
     let status: String
     let species: String
     let type: String

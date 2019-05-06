@@ -15,14 +15,14 @@ class CustomTabBarController: UITabBarController {
         tabBar.tintColor = #colorLiteral(red: 0, green: 0.8592078792, blue: 1, alpha: 1)
         setComponents()
     }
-    
+
     fileprivate func setComponents() {
         viewControllers = [
                             createNavigation(viewController: CharacterViewController() , title: "Characters", imageName: "Character"),
                             createNavigation(viewController: EpisodeViewController(), title: "Episode", imageName: "Episode")
                           ]
     }
-    
+
     fileprivate func createNavigation(viewController: UIViewController, title: String, imageName: String) -> UINavigationController {
         let navigation:UINavigationController = UINavigationController(rootViewController: viewController)
         viewController.navigationItem.title = title
@@ -37,7 +37,7 @@ class CustomTabBarController: UITabBarController {
         navigation.navigationBar.prefersLargeTitles = true
         return navigation
     }
-    
+
     @objc private func dismissController() {
         dismiss(animated: true, completion: nil)
     }

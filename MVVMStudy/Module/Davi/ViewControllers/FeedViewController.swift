@@ -23,13 +23,20 @@ class FeedViewController: UIViewController {
         return segmented
     }()
     
+    private lazy var leftBarButtonItem: UIBarButtonItem = {
+        let button = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(dismissController))
+        return button
+    }()
+    
     private var viewModel: FeedViewModel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
         self.viewModel = FeedViewModel(delegate: self)
-        
+        title = viewModel?.title
+        navigationItem.leftBarButtonItem = leftBarButtonItem
+
         let safeArea = view.safeAreaLayoutGuide
         NSLayoutConstraint.activate(
             [
@@ -46,6 +53,8 @@ class FeedViewController: UIViewController {
     }
     
     @objc private func segmentedChanged(sender: UISegmentedControl) { viewModel?.presentationStyleChanged(sender.selectedSegmentIndex == 0) }
+    
+    @objc private func dismissController() { dismiss(animated: true, completion: nil) }
 }
 
 extension FeedViewController: FeedViewModelDelegate {

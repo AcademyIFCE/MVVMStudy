@@ -9,17 +9,17 @@
 import Foundation
 
 enum APIRoutes {
-    
+
     typealias Parameters = [APIParametersKeys: String]
-    
+
     case character(Parameters?)
     case location(Parameters?)
     case episode(Parameters?)
-    
+
     private var baseURL: String {
         return "https://rickandmortyapi.com/api/"
     }
-    
+
     var endpoint: String {
         let route: String
         let params: Parameters?
@@ -34,12 +34,12 @@ enum APIRoutes {
             route = "episode"
             params = apiParams
         }
-        
+
         let baseEndpoint = "\(baseURL)\(route)"
-        
+
         return formatUrl(endpoint: baseEndpoint, parameters: params)!.absoluteString
     }
-    
+
     private func formatUrl(endpoint: String, parameters: Parameters?) -> URL? {
         var urlComponent = URLComponents(string: endpoint)
         urlComponent?.queryItems = parameters?.map({ (key,value) -> URLQueryItem in
@@ -72,9 +72,8 @@ enum APIGenderValues: String, CustomStringConvertible {
     case male
     case genderless
     case unknown
-    
+
     var description: String {
         return rawValue
     }
 }
-
