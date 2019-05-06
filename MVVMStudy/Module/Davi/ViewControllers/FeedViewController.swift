@@ -18,6 +18,7 @@ class FeedViewController: UIViewController {
     
     private lazy var segmentedControl: RnMSegmentedControl = {
         let segmented = RnMSegmentedControl(titles: "Short", "Long")
+        segmented.addTarget(self, action: #selector(segmentedChanged), for: .valueChanged)
         view.addSubview(segmented)
         return segmented
     }()
@@ -32,7 +33,6 @@ class FeedViewController: UIViewController {
         let safeArea = view.safeAreaLayoutGuide
         NSLayoutConstraint.activate(
             [
-                
                 segmentedControl.topAnchor.constraint(equalTo: safeArea.topAnchor, constant: 16),
                 segmentedControl.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor, constant: 8),
                 segmentedControl.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor, constant: -8),
@@ -44,9 +44,16 @@ class FeedViewController: UIViewController {
             ]
         )
     }
+    
+    @objc private func segmentedChanged(sender: UISegmentedControl) { viewModel?.presentationStyleChanged(sender.selectedSegmentIndex == 0) }
 }
 
 extension FeedViewController: FeedViewModelDelegate {
+    
+    func refreshView() {
+        collectionView.reloadData()
+    }
+    
     func viewModelFinishLoading() {
         collectionView.delegate = self
         collectionView.dataSource = self
@@ -60,7 +67,7 @@ extension FeedViewController: UICollectionViewDelegateFlowLayout, UICollectionVi
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ShortRnMCollectionViewCell.cellIdentifier, for: indexPath) as? RnMCell, let vm = viewModel else {
+        guard let vm = viewModel, let cell = collectionView.dequeueReusableCell(withReuseIdentifier: vm.cellIdentifier, for: indexPath) as? RnMCell else {
             fatalError()
         }
         
@@ -70,6 +77,6 @@ extension FeedViewController: UICollectionViewDelegateFlowLayout, UICollectionVi
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return viewModel?.sizeForCell(from: view.bounds) ?? .zero
+        return viewModel?.sizeForCell(from: collectionView.bounds) ?? .zero
     }
 }

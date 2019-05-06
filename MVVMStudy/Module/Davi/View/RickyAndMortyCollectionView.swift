@@ -20,6 +20,7 @@ class RickyAndMortyCollectionView: UICollectionView {
         
         //Register de células
         register(ShortRnMCollectionViewCell.self, forCellWithReuseIdentifier: ShortRnMCollectionViewCell.cellIdentifier)
+        register(LongRnMCollectionViewCell.self, forCellWithReuseIdentifier: LongRnMCollectionViewCell.cellIdentifier)
     }
     
 }

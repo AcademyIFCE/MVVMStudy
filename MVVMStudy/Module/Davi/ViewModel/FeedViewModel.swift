@@ -10,15 +10,25 @@ import UIKit
 
 protocol FeedViewModelDelegate: class {
     func viewModelFinishLoading()
+    func refreshView()
 }
 
 class FeedViewModel {
 
+    private var isShortPresented = false {
+        didSet {
+            delegate?.refreshView()
+        }
+    }
     private var characters: [Character] = []
     private weak var delegate: FeedViewModelDelegate?
     
     var numberOfCells: Int {
         return characters.count
+    }
+    
+    var cellIdentifier: String {
+        return isShortPresented ? ShortRnMCollectionViewCell.cellIdentifier : LongRnMCollectionViewCell.cellIdentifier
     }
     
     init(delegate: FeedViewModelDelegate) {
@@ -31,12 +41,15 @@ class FeedViewModel {
     }
     
     func sizeForCell(from rect: CGRect) -> CGSize {
-        return CGSize(width: 100, height: 100)
+        return isShortPresented ? ShortRnMViewModel.sizeForCellFrom(rect) : LongRnMViewModel.sizeForCellFrom(rect)
     }
     
     func viewModelForCell(_ item: Int) -> RnMCellViewModel {
         let char = characters[item]
-        return ShortRnMViewModel(char: char)
+        return isShortPresented ? ShortRnMViewModel(char: char) : LongRnMViewModel(char: char)
     }
     
+    func presentationStyleChanged(_ isShortPresented: Bool) {
+        self.isShortPresented = isShortPresented
+    }
 }

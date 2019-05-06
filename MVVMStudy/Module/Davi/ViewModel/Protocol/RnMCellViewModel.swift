@@ -7,7 +7,10 @@
 //
 
 import Foundation
+import CoreGraphics
 
 protocol RnMCellViewModel: class {
     var name: String { get }
+    
+    static func sizeForCellFrom(_ rect: CGRect) -> CGSize
 }

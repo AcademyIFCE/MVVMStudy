@@ -1,17 +1,17 @@
 //
-//  ShortRnMViewModel.swift
+//  LongRnMViewModel.swift
 //  MVVMStudy
 //
 //  Created by Davi Cabral on 06/05/19.
 //  Copyright © 2019 academy.IFCE. All rights reserved.
 //
 
-import Foundation
-import CoreGraphics
+import UIKit
 
-class ShortRnMViewModel: RnMCellViewModel {
+class LongRnMViewModel: RnMCellViewModel {
+
     private let char: Character
-
+    
     var name: String {
         return char.name
     }
@@ -21,6 +21,6 @@ class ShortRnMViewModel: RnMCellViewModel {
     }
     
     static func sizeForCellFrom(_ rect: CGRect) -> CGSize {
-        return CGSize(width: 100, height: 100)
+        return CGSize(width: rect.width, height: 100)
     }
 }
