@@ -1,7 +1,5 @@
 # MVVMStudy
 
-<img align="right" srcset="https://user-images.githubusercontent.com/32227073/57115606-47a9b580-6d26-11e9-8d4d-b69892b72bdb.png, https://user-images.githubusercontent.com/32227073/57115606-47a9b580-6d26-11e9-8d4d-b69892b72bdb.png 1.5x, https://user-images.githubusercontent.com/32227073/57115606-47a9b580-6d26-11e9-8d4d-b69892b72bdb.png 2x" src="https://user-images.githubusercontent.com/32227073/57115606-47a9b580-6d26-11e9-8d4d-b69892b72bdb.png" width="150px;" />
-
 This repository is intended to learn and practice a bit about MVVM and Multiple ways to use bindings on the MVVM architecture
 
 
