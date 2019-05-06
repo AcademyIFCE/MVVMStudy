@@ -16,6 +16,7 @@ class RickyAndMortyCollectionView: UICollectionView {
         collectionViewFlowLayout.scrollDirection = .vertical
         self.init(frame: .zero, collectionViewLayout: collectionViewFlowLayout)
         translatesAutoresizingMaskIntoConstraints = false
+        backgroundColor = .white
         
         //Register de células
         register(ShortRnMCollectionViewCell.self, forCellWithReuseIdentifier: ShortRnMCollectionViewCell.cellIdentifier)

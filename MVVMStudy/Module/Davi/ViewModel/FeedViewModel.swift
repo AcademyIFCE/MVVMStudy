@@ -21,11 +21,6 @@ class FeedViewModel {
         return characters.count
     }
     
-    func viewModelForCell(_ item: Int) -> RnMCellViewModel {
-        let char = characters[item]
-        return ShortRnMViewModel(char: char)
-    }
-    
     init(delegate: FeedViewModelDelegate) {
         self.delegate = delegate
         let provider = APIProvider<CharacterResponse>()
@@ -34,4 +29,14 @@ class FeedViewModel {
             self.delegate?.viewModelFinishLoading()
         }
     }
+    
+    func sizeForCell(from rect: CGRect) -> CGSize {
+        return CGSize(width: 100, height: 100)
+    }
+    
+    func viewModelForCell(_ item: Int) -> RnMCellViewModel {
+        let char = characters[item]
+        return ShortRnMViewModel(char: char)
+    }
+    
 }

@@ -12,6 +12,8 @@ class ShortRnMCollectionViewCell: UICollectionViewCell, RnMCellProtocol {
     
     private lazy var nameLabel: UILabel = {
         let label = UILabel()
+        label.textAlignment = .center
+        label.numberOfLines = 0
         label.translatesAutoresizingMaskIntoConstraints = false
         self.addSubview(label)
         return label
@@ -19,12 +21,13 @@ class ShortRnMCollectionViewCell: UICollectionViewCell, RnMCellProtocol {
 
     override func layoutSubviews() {
         super.layoutSubviews()
+        backgroundColor = .yellow
         
         NSLayoutConstraint.activate([
             nameLabel.bottomAnchor.constraint(equalTo: self.bottomAnchor),
             nameLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor),
             nameLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor),
-            nameLabel.heightAnchor.constraint(equalToConstant: 150)
+            nameLabel.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.3)
         ])
     }
     
