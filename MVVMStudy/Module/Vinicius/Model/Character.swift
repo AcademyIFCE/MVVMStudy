@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import CoreData
 
 struct CharacterResponse: Decodable, APIResponse {
     var info: Info
@@ -18,7 +19,7 @@ struct CharacterLocation: Decodable {
     let url: String
 }
 
-struct Character: Decodable {
+struct Character: Decodable{
     let id: Int
     var name: String
     let status: String
