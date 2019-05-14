@@ -44,6 +44,16 @@
 		DA72941C22739C2B00D74669 /* CharacterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA72941B22739C2B00D74669 /* CharacterViewController.swift */; };
 		DA72942422739C2D00D74669 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA72942222739C2D00D74669 /* LaunchScreen.storyboard */; };
 		DA72942F22739C2D00D74669 /* MVVMStudyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA72942E22739C2D00D74669 /* MVVMStudyTests.swift */; };
+		E3012A552284E75400AB008F /* ELCharsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3012A542284E75400AB008F /* ELCharsViewController.swift */; };
+		E3012A572284E85700AB008F /* ELNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3012A562284E85700AB008F /* ELNavigationViewController.swift */; };
+		E3012A592284EA0D00AB008F /* ELCharCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3012A582284EA0D00AB008F /* ELCharCollectionViewCell.swift */; };
+		E3012A5F2284EF4100AB008F /* ELCharCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3012A5E2284EF4100AB008F /* ELCharCollectionView.swift */; };
+		E3012A642284F52200AB008F /* ELCharsCollectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3012A632284F52200AB008F /* ELCharsCollectionViewModel.swift */; };
+		E3012A672284F5DE00AB008F /* ELCharPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3012A662284F5DE00AB008F /* ELCharPage.swift */; };
+		E3012A692284FAFF00AB008F /* ElCharViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3012A682284FAFF00AB008F /* ElCharViewModel.swift */; };
+		E3012A6C228501DA00AB008F /* IndexPath+init.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3012A6B228501DA00AB008F /* IndexPath+init.swift */; };
+		E3012A6E2285087100AB008F /* APIImageProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3012A6D2285087100AB008F /* APIImageProvider.swift */; };
+		E3012A7022858D3A00AB008F /* UIImage+init.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3012A6F22858D3A00AB008F /* UIImage+init.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -98,6 +108,16 @@
 		DA72942A22739C2D00D74669 /* MVVMStudyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MVVMStudyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA72942E22739C2D00D74669 /* MVVMStudyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVVMStudyTests.swift; sourceTree = "<group>"; };
 		DA72943022739C2D00D74669 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E3012A542284E75400AB008F /* ELCharsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ELCharsViewController.swift; sourceTree = "<group>"; };
+		E3012A562284E85700AB008F /* ELNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ELNavigationViewController.swift; sourceTree = "<group>"; };
+		E3012A582284EA0D00AB008F /* ELCharCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ELCharCollectionViewCell.swift; sourceTree = "<group>"; };
+		E3012A5E2284EF4100AB008F /* ELCharCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ELCharCollectionView.swift; sourceTree = "<group>"; };
+		E3012A632284F52200AB008F /* ELCharsCollectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ELCharsCollectionViewModel.swift; sourceTree = "<group>"; };
+		E3012A662284F5DE00AB008F /* ELCharPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ELCharPage.swift; sourceTree = "<group>"; };
+		E3012A682284FAFF00AB008F /* ElCharViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElCharViewModel.swift; sourceTree = "<group>"; };
+		E3012A6B228501DA00AB008F /* IndexPath+init.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "IndexPath+init.swift"; sourceTree = "<group>"; };
+		E3012A6D2285087100AB008F /* APIImageProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIImageProvider.swift; sourceTree = "<group>"; };
+		E3012A6F22858D3A00AB008F /* UIImage+init.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+init.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,6 +164,7 @@
 		53F8C277227B63B200753CDF /* Module */ = {
 			isa = PBXGroup;
 			children = (
+				E3012A532284C29900AB008F /* Elias */,
 				53F8C276227B63A500753CDF /* BaseController */,
 				53F8C273227B637F00753CDF /* Vinicius */,
 				53F8C289227B855B00753CDF /* Davi */,
@@ -181,6 +202,7 @@
 				53F8C283227B786700753CDF /* APIRoutes.swift */,
 				53F8C285227B813900753CDF /* APIProvider.swift */,
 				53F8C287227B82F200753CDF /* APIResponse.swift */,
+				E3012A6D2285087100AB008F /* APIImageProvider.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -365,6 +387,62 @@
 			path = MVVMStudyTests;
 			sourceTree = "<group>";
 		};
+		E3012A532284C29900AB008F /* Elias */ = {
+			isa = PBXGroup;
+			children = (
+				E3012A6A228501C300AB008F /* Extenstions */,
+				E3012A652284F55C00AB008F /* Models */,
+				E3012A622284F51000AB008F /* ViewModels */,
+				E3012A5D2284EC6300AB008F /* ViewControllers */,
+				E3012A5C2284EC5B00AB008F /* Views */,
+			);
+			path = Elias;
+			sourceTree = "<group>";
+		};
+		E3012A5C2284EC5B00AB008F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E3012A582284EA0D00AB008F /* ELCharCollectionViewCell.swift */,
+				E3012A5E2284EF4100AB008F /* ELCharCollectionView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		E3012A5D2284EC6300AB008F /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				E3012A562284E85700AB008F /* ELNavigationViewController.swift */,
+				E3012A542284E75400AB008F /* ELCharsViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		E3012A622284F51000AB008F /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				E3012A632284F52200AB008F /* ELCharsCollectionViewModel.swift */,
+				E3012A682284FAFF00AB008F /* ElCharViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		E3012A652284F55C00AB008F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				E3012A662284F5DE00AB008F /* ELCharPage.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		E3012A6A228501C300AB008F /* Extenstions */ = {
+			isa = PBXGroup;
+			children = (
+				E3012A6B228501DA00AB008F /* IndexPath+init.swift */,
+				E3012A6F22858D3A00AB008F /* UIImage+init.swift */,
+			);
+			path = Extenstions;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -488,14 +566,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E3012A672284F5DE00AB008F /* ELCharPage.swift in Sources */,
 				53F8C292228061D100753CDF /* FeedViewModel.swift in Sources */,
 				53F8C28C227B880700753CDF /* FeedViewController.swift in Sources */,
+				E3012A552284E75400AB008F /* ELCharsViewController.swift in Sources */,
 				922DE22E2274B70500020AA5 /* UIView+Layout.swift in Sources */,
 				53F8C29C22806E9F00753CDF /* RnMCellProtocol.swift in Sources */,
+				E3012A642284F52200AB008F /* ELCharsCollectionViewModel.swift in Sources */,
 				53F8C29E228070C000753CDF /* ShortRnMViewModel.swift in Sources */,
 				53F8C29922806CCE00753CDF /* RnMCellViewModel.swift in Sources */,
 				DA72941C22739C2B00D74669 /* CharacterViewController.swift in Sources */,
 				53F8C286227B813900753CDF /* APIProvider.swift in Sources */,
+				E3012A692284FAFF00AB008F /* ElCharViewModel.swift in Sources */,
 				92682B332277EAE0006263D2 /* RickAndMortyAPIClient.swift in Sources */,
 				922DE22B2274A6C500020AA5 /* EpisodeCollectionViewCell.swift in Sources */,
 				53F8C2A72280A73500753CDF /* RnMNavigationController.swift in Sources */,
@@ -506,8 +588,12 @@
 				92682B3E2277FFCC006263D2 /* EpisodeViewModel.swift in Sources */,
 				53F8C27A227B646100753CDF /* BaseViewController.swift in Sources */,
 				9205F18C227BC20600A90294 /* Character.swift in Sources */,
+				E3012A5F2284EF4100AB008F /* ELCharCollectionView.swift in Sources */,
+				E3012A6C228501DA00AB008F /* IndexPath+init.swift in Sources */,
+				E3012A592284EA0D00AB008F /* ELCharCollectionViewCell.swift in Sources */,
 				922DE2382274C04700020AA5 /* Service.swift in Sources */,
 				53F8C2A32280808800753CDF /* LongRnMCollectionViewCell.swift in Sources */,
+				E3012A7022858D3A00AB008F /* UIImage+init.swift in Sources */,
 				9297CC262275CB4B00F69496 /* CharacterViewModel.swift in Sources */,
 				922DE2292274A46900020AA5 /* BaseCollectionViewController.swift in Sources */,
 				92682B352277EF1C006263D2 /* APIRickAndMortyDelegate.swift in Sources */,
@@ -520,7 +606,9 @@
 				53F8C284227B786700753CDF /* APIRoutes.swift in Sources */,
 				92682B372277EF91006263D2 /* Info.swift in Sources */,
 				53F8C2972280679C00753CDF /* ShortRnMCollectionViewCell.swift in Sources */,
+				E3012A572284E85700AB008F /* ELNavigationViewController.swift in Sources */,
 				53F8C27D227B65C900753CDF /* Project.swift in Sources */,
+				E3012A6E2285087100AB008F /* APIImageProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -675,7 +763,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Z8P97P3QB4;
 				INFOPLIST_FILE = MVVMStudy/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -692,7 +782,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Z8P97P3QB4;
 				INFOPLIST_FILE = MVVMStudy/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

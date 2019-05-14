@@ -22,37 +22,38 @@ class FeedViewModel {
     }
     private var characters: [Character] = []
     private weak var delegate: FeedViewModelDelegate?
-    
+
     var numberOfCells: Int {
         return characters.count
     }
-    
+
     var title: String {
         return "Personagens"
     }
-    
+
     var cellIdentifier: String {
         return isShortPresented ? ShortRnMCollectionViewCell.cellIdentifier : LongRnMCollectionViewCell.cellIdentifier
     }
-    
+
     init(delegate: FeedViewModelDelegate) {
         self.delegate = delegate
         let provider = APIProvider<CharacterResponse>()
+
         provider.data(from: .character(nil)) { (response, error) in
             self.characters = response?.results ?? []
             self.delegate?.viewModelFinishLoading()
         }
     }
-    
+
     func sizeForCell(from rect: CGRect) -> CGSize {
         return isShortPresented ? ShortRnMViewModel.sizeForCellFrom(rect) : LongRnMViewModel.sizeForCellFrom(rect)
     }
-    
+
     func viewModelForCell(_ item: Int) -> RnMCellViewModel {
         let char = characters[item]
         return isShortPresented ? ShortRnMViewModel(char: char) : LongRnMViewModel(char: char)
     }
-    
+
     func presentationStyleChanged(_ isShortPresented: Bool) {
         self.isShortPresented = isShortPresented
     }

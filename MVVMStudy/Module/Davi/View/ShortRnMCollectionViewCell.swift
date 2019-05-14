@@ -22,7 +22,7 @@ class ShortRnMCollectionViewCell: UICollectionViewCell, RnMCellProtocol {
     override func layoutSubviews() {
         super.layoutSubviews()
         backgroundColor = .yellow
-        
+
         NSLayoutConstraint.activate([
             nameLabel.bottomAnchor.constraint(equalTo: self.bottomAnchor),
             nameLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor),
@@ -30,7 +30,7 @@ class ShortRnMCollectionViewCell: UICollectionViewCell, RnMCellProtocol {
             nameLabel.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.3)
         ])
     }
-    
+
     func setup(with viewModel: RnMCellViewModel) {
         nameLabel.text = viewModel.name
     }

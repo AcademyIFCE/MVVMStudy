@@ -15,11 +15,11 @@ class ShortRnMViewModel: RnMCellViewModel {
     var name: String {
         return char.name
     }
-    
+
     init(char: Character) {
         self.char = char
     }
-    
+
     static func sizeForCellFrom(_ rect: CGRect) -> CGSize {
         return CGSize(width: 100, height: 100)
     }

@@ -45,6 +45,7 @@ enum APIRoutes {
         urlComponent?.queryItems = parameters?.map({ (key,value) -> URLQueryItem in
             URLQueryItem(name: key.rawValue, value: value)
         })
+
         return urlComponent?.url
     }
 }
@@ -55,6 +56,7 @@ enum APIParametersKeys: String {
     case species
     case type
     case gender
+    case page
 }
 
 enum APIStatusValues: String, CustomStringConvertible {

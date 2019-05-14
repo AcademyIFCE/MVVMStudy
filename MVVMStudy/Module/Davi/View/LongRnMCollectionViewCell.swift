@@ -18,7 +18,7 @@ class LongRnMCollectionViewCell: UICollectionViewCell, RnMCellProtocol {
         self.addSubview(label)
         return label
     }()
-    
+
     override func layoutSubviews() {
         super.layoutSubviews()
         backgroundColor = .red
